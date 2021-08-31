@@ -42,7 +42,7 @@ while conflag
     save([Resultdir filesep 'Run#' num2str(Run) '.mat'],'spatial_maps','-v7.3');
    %% Remove estimated components
     [tc, spatial] = snowball_dual_regress(data_AllSub, spatial_maps);
-    data_AllSub_seed = data_AllSub-(tc*spatial)';
+    data_AllSub_seed = data_AllSub-(tc*spatial_maps')';
 end
 %%
 toc
